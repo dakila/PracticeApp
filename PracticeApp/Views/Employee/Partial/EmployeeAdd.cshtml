@@ -1,0 +1,35 @@
+﻿<form name="addEmployeeForm" ng-controller="addEmployeeController as vm" ng-cloak novalidate>
+    <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
+        <md-input-container>
+            <label>Role</label>
+            <input ng-model="vm.employee.role">
+        </md-input-container>
+    </md-content>
+    <md-content layout-padding>
+        <md-input-container flex>
+            <label>First name</label>
+            <input type="text" name="firstName" required ng-model="vm.employee.firstName">
+            <div ng-messages="addEmployeeForm.firstName.$error" ng-show="addEmployeeForm.$submitted || addEmployeeForm.firstName.$touched">
+                    <div ng-message="required">First Name is required.</div>
+                </div>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Middle Name</label>
+            <input type="text" name="middleName" required ng-model="vm.employee.middleName">
+            <div ng-messages="addEmployeeForm.middleName.$error" ng-show="addEmployeeForm.$submitted || addEmployeeForm.middleName.$touched">
+                <div ng-message="required">Middle Name is required.</div>
+            </div>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Last Name</label>
+            <input type="text" name="lastName" required ng-model="vm.employee.lastName">
+            <div ng-messages="addEmployeeForm.lastName.$error" ng-show="addEmployeeForm.$submitted || addEmployeeForm.lastName.$touched">
+                <div ng-message="required">Last Name is required.</div>
+            </div>
+        </md-input-container>
+    </md-content>
+    <md-content layout layout-sm="column">
+        <md-button class="md-raised md-primary" ng-click="addEmployeeForm.$valid && vm.onAdd()">Add</md-button>
+        <md-button class="md-raised md-primary" ui-sref="list">Cancel</md-button>
+    </md-content>
+</form>
