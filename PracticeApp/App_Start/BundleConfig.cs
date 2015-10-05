@@ -10,7 +10,7 @@ namespace PracticeApp
         {
             
             bundles.Add(new ScriptBundle("~/bundles/angular")
-                .Include("~/Scripts/angular.js",
+                .Include("~/Scripts/angular.js", 
                 "~/Scripts/angular-ui-router.js",
                 "~/Scripts/angular-resource.js",
                 "~/Scripts/angular-local-storage.js",
